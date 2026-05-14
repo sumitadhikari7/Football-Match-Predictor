@@ -16,3 +16,17 @@ The core logic of this predictor relies on **Rolling Averages** (from the last 5
 *   **Libraries**: `scikit-learn`, `pandas`, `numpy`, `xgboost`, `joblib`
 *   **Framework**: Streamlit
 *   **Environment**: Linux
+
+## The Data Pipeline & Challenges
+As an engineering student, I focused on making this model technically sound for real-world deployment:
+
+*   **Handling Feature Drift**: The app dynamically maps user-friendly labels (like "Away Shots") to technical rolling features (like `AwayShots_roll`) used during training.
+*   **Schema Validation**: The inference engine uses a "Clean Room" DataFrame approach to filter out any "unseen" features, preventing runtime crashes caused by shape mismatches.
+*   **Anti-Leakage Logic**: By strictly enforcing a rolling-average input, the model is forced to predict based on momentum rather than current-game statistics.
+
+### Future Roadmap
+- [ ] Integration with live APIs (e.g., FBRef) for automatic "Form" fetching.
+- [ ] Support for other major European leagues (La Liga, Serie A).
+- [ ] Deployment to Streamlit Cloud for public access.
+
+---
