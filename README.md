@@ -30,3 +30,31 @@ As an engineering student, I focused on making this model technically sound for 
 - [ ] Deployment to Streamlit Cloud for public access.
 
 ---
+
+## 📋 Installation & Usage
+
+1.  **Clone the repository**:
+2. **Install dependencies**:
+    ```bash
+    pip install streamlit pandas joblib scikit-learn xgboost
+    ```
+3.  **Run the App**:
+    ```bash
+    streamlit run app.py
+    ```
+---
+## Conclusion
+
+The development of the Premier League Match Predictor successfully demonstrates the transition from a localized data science script to a robust, deployment-ready web application. Through this project, several critical engineering and machine learning milestones were achieve:
+
+### 1. Model Architecture & Non-Linear Complexity
+By moving beyond basic linear regression to a **Hybrid Model** (XGBoost and Random Forest), the system gained the ability to capture complex, non-linear relationships within football match data. This ensures that the model accounts for the volatile nature of sports statistics where a single metric rarely determines the outcome.
+
+### 2. Schema Rigidity & Inference Integrity
+A significant technical challenge addressed was **Inference-Training Skew**. The implementation of a "Clean Room" DataFrame and strict **Schema Enforcement** ensured that the inference engine remained perfectly aligned with the model's 123 original training features. This prevented runtime crashes and ensured that the data processed by the `StandardScaler` was consistent with the training distribution.
+
+### 3. Ethical Machine Learning: Anti-Leakage Design
+The project strictly adheres to professional standards by using **Rolling Averages** rather than current match-day stats. This design prevents "Data Leakage" (cheating), forcing the model to make predictions based solely on the historical momentum and form of the teams involved.
+
+### 4. Scalable Infrastructure
+Developed within a Linux environment on a Lenovo IdeaPad 5, the project serves as a scalable foundation for future enhancements, such as automated live-API data ingestion and multi-league support.
